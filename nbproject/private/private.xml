@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/Marcelo/Documents/Projetos/curso_laravel/laravel_express/app/Post.php</file>
+            <file>file:/C:/Users/Marcelo/Documents/Projetos/curso_laravel/laravel_express/resources/views/template.blade.php</file>
+            <file>file:/C:/Users/Marcelo/Documents/Projetos/curso_laravel/laravel_express/database/migrations/2016_08_20_200941_create_table_post.php</file>
+            <file>file:/C:/Users/Marcelo/Documents/Projetos/curso_laravel/laravel_express/app/Http/Controllers/PostsController.php</file>
+            <file>file:/C:/Users/Marcelo/Documents/Projetos/curso_laravel/laravel_express/app/Http/routes.php</file>
+            <file>file:/C:/Users/Marcelo/Documents/Projetos/curso_laravel/laravel_express/resources/views/posts/index.blade.php</file>
+            <file>file:/C:/Users/Marcelo/Documents/Projetos/curso_laravel/laravel_express/database/factories/ModelFactory.php</file>
+        </group>
+    </open-files>
+</project-private>

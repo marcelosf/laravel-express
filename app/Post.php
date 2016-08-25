@@ -31,4 +31,14 @@ class Post extends Model
         
     }
     
+    
+    public function getTagListAttribute()
+    {
+        
+        $tags = $this->tags()->lists('name')->all();
+        
+        return implode(', ', $tags);
+        
+    }
+    
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Post;
+use App\Tag;
 use App\Http\Requests\PostRequest;
 
 class PostsAdminController extends Controller
@@ -41,7 +42,11 @@ class PostsAdminController extends Controller
     public function store(PostRequest $request)
     {
         
-        $this->post->create($request->all());
+        $tagsIDs = $this->getTagsIds($request);
+        
+        $post = $this->post->create($request->all());
+        
+        $post->tags()->sync($tagsIDs);
         
         return redirect()->route('admin.posts.index');
         
@@ -61,7 +66,11 @@ class PostsAdminController extends Controller
     public function update($id, PostRequest $request)
     {
         
+        $tagsIDs = $this->getTagsIds($request);
+        
         $this->post->find($id)->update($request->all());
+        
+        $this->post->find($id)->tags()->sync($tagsIDs);
         
         return redirect()->route('admin.posts.index');
         
@@ -74,6 +83,25 @@ class PostsAdminController extends Controller
         $this->post->find($id)->delete();
         
         return redirect()->route('admin.posts.index');
+        
+    }
+    
+    
+    private function getTagsIds(PostRequest $request)
+    {
+        
+        $tagList = array_filter(array_map('trim', explode(',', $request->tags)));
+        
+        $tagsIDs = [];
+        
+        foreach ($tagList as $tagName)
+        {
+            
+            $tagsIDs[] = Tag::firstOrCreate(['name' => $tagName])->id;
+            
+        }
+        
+        return $tagsIDs;
         
     }
     

@@ -31,6 +31,14 @@ class PostsAdminController extends Controller
     }
     
     
+    public function auth()
+    {
+        
+        
+        
+    }
+    
+    
     public function create()
     {
         
